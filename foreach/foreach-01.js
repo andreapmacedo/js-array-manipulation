@@ -43,6 +43,7 @@ const sumAgeFunction = (item) => {
   sumAgeB += item.age
 }
 
+// without anonymous function
 list.forEach(sumAgeFunction)
 
 console.log(sumAgeB)
