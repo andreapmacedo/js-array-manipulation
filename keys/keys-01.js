@@ -59,3 +59,18 @@ const reduceFunction = (acc, object) => {
 const personList2 = list.reduce(reduceFunction, {})
 
 console.log(personList.andre);
+
+
+const keys =  Object.keys(personList)
+
+console.log(keys);
+
+
+const backList = keys.map((key) => {
+  return {
+    name: key,
+    age: personList[key].age
+  }
+})
+
+console.log(backList);
