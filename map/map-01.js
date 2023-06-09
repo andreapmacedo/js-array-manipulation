@@ -12,12 +12,13 @@ const list = [
     age: 40,
   }
 ]
-console.log(list.map(item => item.name));
+console.log(list.map(item => item));
+// console.log(list.map(item => item.name));
 
 const same = (item) => {
   return item.name
 }
-console.log(list.map(same));
+// console.log(list.map(same));
 
 const convertObject = (item) => {
   return {
@@ -26,16 +27,20 @@ const convertObject = (item) => {
     nameAge: `${item.name} + ${item.age}`
   }
 }
-console.log(list.map(convertObject));
+// console.log(list.map(convertObject));
 
+
+// neste caso, o nameAge é adicionado ao objeto
 const convertObjectWithSpread = (item) => {
   return {
     ...item,
     nameAge: `${item.name} + ${item.age}`
   }
 }
-console.log(list.map(convertObjectWithSpread));
+// console.log(list.map(convertObjectWithSpread));
 
+
+// Neste caso, o age será sobrescrito
 const convertObjectWithSpreadObs = (item) => {
   return {
     ...item,

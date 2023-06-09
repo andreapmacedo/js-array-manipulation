@@ -26,7 +26,7 @@ const findPersonByName = list.find((person) => person.name === 'maria')
 // if not found, returns undefined
 
 
-// withou anonymous function
+// Usando uma função declarada
 const findPersonByName2 = (person) => person.name === 'maria'
 
 console.log(list.find(findPersonByName2));

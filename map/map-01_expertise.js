@@ -13,20 +13,24 @@ const list = [
   }
 ]
 
+// como fazer para stringNameAge ser reaproveitado em várias funções?
+// const stringNameAge = `${item.name} + ${item.age}` não vai funcionar, pois não é uma função
+// const stringNameAge = '${item.name} + ${item.age}' Não vai gerar ume erro, mas o que será adicionado será literalmente uma string '${item.name} + ${item.age}' e não os dados do objeto
+const stringNameAge = (item) => `${item.name} + ${item.age}`; // Funciona pois é uma função
 
-// const stringNameAge = `${item.name} + ${item.age}` does not work
-// const stringNameAge = '${item.name} + ${item.age}' works, but it is a string not a function, expected outcome
-const stringNameAge = (item) => `${item.name} + ${item.age}`; // works because it is a function
 
 console.log(list.map(item => item.name));
+
 
 const same = (item) => {
   return item.name
 }
 console.log(list.map(same));
 
+
+// sobrescreve todo o objeto
 const convertObject = (item) => {
-  const stringNameAge = `${item.name} + ${item.age}`
+  // const stringNameAge = `${item.name} + ${item.age}` não vai funcionar, pois não é uma função
   return {
     name: item.name,
     age: item.age,
@@ -36,6 +40,7 @@ const convertObject = (item) => {
 }
 console.log(list.map(convertObject));
 
+// Vai adicionar o nameAge ao objeto
 const convertObjectWithSpread = (item) => {
   return {
     ...item,
@@ -43,8 +48,9 @@ const convertObjectWithSpread = (item) => {
     nameAge: stringNameAge(item)
   }
 }
-console.log(list.map(convertObjectWithSpread));
+// console.log(list.map(convertObjectWithSpread));
 
+// Vai sobrescrever o age
 const convertObjectWithSpreadObs = (item) => {
   return {
     ...item,
@@ -53,4 +59,4 @@ const convertObjectWithSpreadObs = (item) => {
     
   }
 }
-console.log(list.map(convertObjectWithSpreadObs));
+// console.log(list.map(convertObjectWithSpreadObs));

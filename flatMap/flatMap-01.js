@@ -18,7 +18,7 @@ const list = [
 ]
 
 const cardsMap = list.map((object) => object.cards) // Return a list of lists
-// console.log(cardsMap);
+console.log(cardsMap);
 
 const cardsFlatMap = list.flatMap((object) => object.cards) // Return a list with all elements
 console.log(cardsFlatMap);
